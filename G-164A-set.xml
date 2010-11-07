@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<sim>
+  <description>Grumman G-164A Ag-Cat</description>
+  <author>Guillaume Chauvat</author>
+  <status>alpha (0.2.1)</status>
+  <help>
+    <key>
+      <name>e</name>
+      <desc>insecticid</desc>
+    </key>
+    <title>Grumman G-164A Ag-Cat</title>
+    <line>____________________Procedures____________________</line>
+  </help>
+
+  <model>
+    <path>Aircraft/G-164/Models/G-164A-model.xml</path>
+  </model>
+
+  <flight-model>jsb</flight-model>
+  <aero>G-164A</aero>
+  <startup>
+    <splash-texture>Aircraft/G-164/G-164A-splash-2.png</splash-texture>
+  </startup>
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+  <view>
+    <internal archive="y">true</internal>
+    <config>
+      <x-offset-m archive="y">0.00</x-offset-m> <!-- left -->
+      <y-offset-m archive="y">0.98</y-offset-m> <!-- up -->
+      <z-offset-m archive="y">0.80</z-offset-m> <!-- back -->
+      <pitch-offset-deg>-14.5</pitch-offset-deg>
+    </config>
+  </view>
+  <sound>
+    <path archive="y">Aircraft/G-164/Sounds/G-164-sound.xml</path>
+  </sound>
+
+  <menubar>
+    <default>
+      <menu n="10">
+        <label>G-164</label>
+        <enabled type="bool">true</enabled>
+        <item>
+          <label>Autostart</label>
+          <binding>
+            <command>nasal</command>
+            <script>G-164.autostart();</script>
+          </binding>
+        </item>
+      </menu>
+    </default>
+  </menubar>
+
+</sim>
+
+<consumables>
+  <fuel>
+    <tank n="0">
+      <level-gal_us>65</level-gal_us>
+    </tank>
+  </fuel>
+</consumables>
+
+<input>
+  <keyboard>
+    <!--<key n="105">
+      <name>i</name>
+      <desc>Release insecticid</desc>
+      <binding n="0">
+        <command>property-toggle</command>
+        <property>/controls/switches/insecticid</property>
+      </binding>
+    </key>-->
+    <key n="101">
+      <name>e</name>
+      <desc>Pesticide Trigger</desc> 
+      <binding>
+	<command>property-assign</command>
+	<property>controls/armament/trigger</property>
+	<value>true</value>
+      </binding>
+      <mod-up>
+	<binding>
+	  <command>property-assign</command>
+	  <property>controls/armament/trigger</property>
+	  <value>false</value>
+	</binding> 
+      </mod-up>
+    </key>
+    <key n="115">
+      <name>s</name>
+      <desc>Fire Starter</desc>
+      <binding>
+        <command>nasal</command>
+        <script>G164.starter(1);</script>
+      </binding>
+      <mod-up>
+        <binding>
+        <command>nasal</command>
+        <script>G164.starter(0);</script>
+        </binding>
+      </mod-up>
+    </key>
+  </keyboard>
+</input>
+
+<payload>
+  <weight>
+    <name type="string">Pilot</name>
+    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+    <min-lb type="double">0.0</min-lb>
+    <max-lb type="double">250.0</max-lb>
+  </weight>
+  <weight>
+    <name type="string">Hopper</name>
+    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+    <min-lb type="double">0.0</min-lb>
+    <max-lb type="double">2200.0</max-lb>
+  </weight>
+</payload>
+
+<limits>
+  <max-positive-g>4.2</max-positive-g>
+  <max-negative-g>-1.0</max-negative-g>
+  <vne>128</vne> <!-- 147 MPH -->
+</limits>
+
+<!-- Nasal files/scripts -->
+<nasal>
+  <failures>
+    <file>Aircraft/Generic/limits.nas</file>
+  </failures>
+  <G164>
+    <file>Aircraft/G-164/Nasal/G-164.nas</file>
+  </G164>
+</nasal>
+
+</PropertyList>

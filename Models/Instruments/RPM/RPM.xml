@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>RPM.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>PointerTip</object-name>
+  <emission>
+   <red>0.6</red>
+   <green>0.9</green>
+   <blue>0.6</blue>
+   <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <emission>
+   <red>0.3</red>
+   <green>0.3</green>
+   <blue>0.3</blue>
+   <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+  </emission>
+ </animation>
+
+
+ <animation>
+  <type>rotate</type>
+  <object-name>PointerCentre</object-name>
+  <object-name>PointerTip</object-name>
+  <property>engines/engine[0]/rpm</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>0</dep></entry>
+   <entry><ind>300</ind><dep>0</dep></entry>
+   <entry><ind>500</ind><dep>18</dep></entry>
+   <entry><ind>2000</ind><dep>153</dep></entry>
+   <entry><ind>3000</ind><dep>244</dep></entry>
+   <entry><ind>3900</ind><dep>280</dep></entry>
+  </interpolation>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>100h</object-name>
+   <property>/instrumentation/rpm/hundred</property>
+   <factor>36</factor>
+   <axis>
+     <x>0</x>
+     <y>1</y>
+     <z>0</z>
+   </axis>
+   <center>
+     <x-m>-0.020</x-m>
+     <y-m> 0.011</y-m>
+     <z-m>-0.018</z-m>
+   </center>
+ </animation>
+
+<animation>
+   <type>rotate</type>
+   <object-name>10h</object-name>
+   <property>/instrumentation/rpm/ten</property>
+   <factor>36</factor>
+   <axis>
+     <x>0</x>
+     <y>1</y>
+     <z>0</z>
+   </axis>
+   <center>
+     <x-m>-0.020</x-m>
+     <y-m> 0.004</y-m>
+     <z-m>-0.018</z-m>
+   </center>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>1h</object-name>
+   <property>/instrumentation/rpm/unit</property>
+   <factor>36</factor>
+   <axis>
+     <x>0</x>
+     <y>1</y>
+     <z>0</z>
+   </axis>
+   <center>
+     <x-m>-0.020</x-m>
+     <y-m>-0.002</y-m>
+     <z-m>-0.018</z-m>
+   </center>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>0.1h</object-name>
+   <property>/instrumentation/rpm/cent</property>
+   <factor>36</factor>
+   <axis>
+     <x>0</x>
+     <y>1</y>
+     <z>0</z>
+   </axis>
+   <center>
+     <x-m>-0.020</x-m>
+     <y-m>-0.009</y-m>
+     <z-m>-0.018</z-m>
+   </center>
+ </animation>
+
+</PropertyList>
