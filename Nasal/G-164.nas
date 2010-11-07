@@ -1,20 +1,21 @@
 ##############
 # Insecticid #
 ##############
-var capacity = 0.01;  # 1/10 * lb / kt
+var capacity = 0.01;
 var insecticidRelease = func {
-    if getprop("/controls/armament/trigger") {
+    if (getprop("/controls/armament/trigger")) {
 	var weight = getprop("/payload/weight[1]/weight-lb");
 	if (weight > 0) {
 	    var velocity = getprop("/velocities/airspeed-kt");
 	    weight = weight - capacity * velocity;
 	    setprop("/payload/weight[1]/weight-lb", weight);
-	    settimer(insecticidRelease, 0.1);
 	}
     }
+    settimer(insecticidRelease, 0.1);
 }
 
-setlistener("/controls/armament/trigger", insecticidRelease);
+setlistener("/sim/signals/fdm-initialized", insecticidRelease);
+setlistener("/sim/signals/reinit", insecticidRelease);
 
 ###########
 # Starter #
@@ -38,4 +39,19 @@ var starter = func(value) {
 		setprop("/controls/engines/engine[0]/starter", 0);
 		setprop("/controls/switches/starter", 0);
 	}
+}
+
+var starter_time = 0;
+var autostart = func {
+	setprop("/controls/engines/engine[0]/magnetos", 3);
+	controls.applyBrakes(1);
+	starter(1);
+	if (getprop("/engines/engine[0]/running") or starter_time >= 12) {
+		starter(0);
+		controls.applyBrakes(0);
+		starter_time = 0;
+		return;
+	}
+	starter_time = starter_time + 1;
+	settimer(autostart, 1);
 }

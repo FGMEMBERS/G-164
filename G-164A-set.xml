@@ -5,7 +5,7 @@
 <sim>
   <description>Grumman G-164A Ag-Cat</description>
   <author>Guillaume Chauvat</author>
-  <status>alpha (0.2.1)</status>
+  <status>alpha (0.2.2)</status>
   <help>
     <key>
       <name>e</name>
@@ -51,7 +51,7 @@
           <label>Autostart</label>
           <binding>
             <command>nasal</command>
-            <script>G-164.autostart();</script>
+            <script>G164.autostart();</script>
           </binding>
         </item>
       </menu>
@@ -112,18 +112,18 @@
 </input>
 
 <payload>
-  <weight>
-    <name type="string">Pilot</name>
-    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
-    <min-lb type="double">0.0</min-lb>
-    <max-lb type="double">250.0</max-lb>
-  </weight>
   <weight>
-    <name type="string">Hopper</name>
-    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
-    <min-lb type="double">0.0</min-lb>
-    <max-lb type="double">2200.0</max-lb>
-  </weight>
+    <name type="string">Pilot</name>
+    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+    <min-lb type="double">0.0</min-lb>
+    <max-lb type="double">250.0</max-lb>
+  </weight>
+  <weight>
+    <name type="string">Hopper</name>
+    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+    <min-lb type="double">0.0</min-lb>
+    <max-lb type="double">2200.0</max-lb>
+  </weight>
 </payload>
 
 <limits>
@@ -131,6 +131,12 @@
   <max-negative-g>-1.0</max-negative-g>
   <vne>128</vne> <!-- 147 MPH -->
 </limits>
+
+<controls>
+  <armament>
+    <trigger type="bool">false</trigger>
+  </armament>
+</controls>
 
 <!-- Nasal files/scripts -->
 <nasal>
