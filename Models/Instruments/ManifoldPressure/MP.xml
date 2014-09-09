@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>MP.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>PointerTip</object-name>   
+  <emission>
+   <red>1.0</red>
+   <green>0.3</green>
+   <blue>0.3</blue>
+   <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+  </emission>
+ </animation>
+
+ <animation> 
+  <type>rotate</type>
+  <object-name>PointerTip</object-name>
+  <object-name>PointerCenter</object-name>
+  <property>/engines/engine/manifold-pressure</property>
+  <interpolation>
+   <entry><ind>10</ind><dep>0</dep></entry>
+   <entry><ind>30</ind><dep>160</dep></entry>
+   <entry><ind>36</ind><dep>209</dep></entry>
+   <entry><ind>50</ind><dep>320</dep></entry>
+  </interpolation>
+  <axis> 
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>  
+  </center>
+ </animation>         
+ 
+</PropertyList>

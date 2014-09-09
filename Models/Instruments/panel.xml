@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<!-- no need to load the panel in MP if the plane is at more than 150 m -->
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>100</max-m>
+  </animation>
+
+<!-- anemometer -->
+  <model>
+    <path>Aircraft/G-164/Models/Instruments/ASI/ASI.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.079 </y-m>
+      <z-m>  0.044 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- altimeter -->
+  <model>
+    <path>Aircraft/G-164/Models/Instruments/Altimeter/Altimeter.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.161 </y-m>
+      <z-m>  0.080 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- rpm -->
+  <model>
+    <path>Aircraft/G-164/Models/Instruments/RPM/RPM.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.120 </y-m>
+      <z-m>  0.242 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- compass -->
+  <model>
+    <path>Aircraft/G-164/Models/Instruments/MagneticCompass/MagneticCompass.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.232 </y-m>
+      <z-m>  0.050 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+
+<!-- oil temperature -->
+  <model>
+    <path>Aircraft/G-164/Models/Instruments/OilTemp/OilTemp.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.239 </y-m>
+      <z-m>  0.026 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- oil pressure -->
+  <model>
+    <path>Aircraft/G-164/Models/Instruments/OilPress/OilPress.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.239 </y-m>
+      <z-m>  0.092 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- manifold pressure -->
+  <model>
+    <path>Aircraft/G-164/Models/Instruments/ManifoldPressure/MP.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.311 </y-m>
+      <z-m>  0.064 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>
